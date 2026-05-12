@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: #faf7f0;
+    color: #1a1916;
+    background-image:
+      radial-gradient(rgba(26, 25, 22, 0.04) 1px, transparent 1px),
+      radial-gradient(rgba(26, 25, 22, 0.025) 1px, transparent 1px);
+    background-size: 24px 24px, 8px 8px;
+    background-position: 0 0, 4px 4px;
+  }
+
+  ::selection {
+    background: #f4d35e;
+    color: #1a1916;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .rule-line {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9bfa6 20%, #c9bfa6 80%, transparent);
+  }
+
+  .ornament::before {
+    content: "❦";
+    display: block;
+    text-align: center;
+    color: #6b6660;
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #c9bfa6;
+    border-radius: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #6b6660;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
